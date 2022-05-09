@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load bootstrap3 %}
+{% block header %}
+<h3>Add a new Topic:</h3>
+{% endblock header %}
+{% block content %}
+<form action="{% url 'new_topic' %}" method='post' class="form">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" value=True id="public" />
+        <label class="form-check-label" for="public">
+            <h3>Make post public?</h3>
+        </label>
+        
+
+        <input class="form-input" type="input" value=True id="text1" />
+        <label class="form-label" for="text1">
+            <h3>Text</h3>
+        </label>
+
+
+    </div>
+    {% buttons %}
+    <button name="submit" class="btn btn-primary">Add Topic</button>
+    {% endbuttons %}
+</form>
+{% endblock content %}

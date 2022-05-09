@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load bootstrap3 %}
+{% block content %}
+<h3><a href="{% url 'topic' topic.id %}">{{topic}}</a></h3>
+<h4>Add new entry:</h4>
+
+<form action="{% url 'new_entry' topic.id %}" method="post" class="form" >
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    {% buttons %}
+    <button name="submit" class="btn btn-primary">Add Entry</button>
+    {% endbuttons %}
+</form>
+{% endblock content %}

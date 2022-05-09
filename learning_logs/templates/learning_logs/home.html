@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block header %}
+<div class="jambotron">
+    <h1>Track Your Learning</h1>
+</div>
+{% endblock header %}
+{% block content %}
+<h2>
+    <a href="{% url 'users:register' %}">Register an Account</a>
+    to make your own learning log and list the topics you're learning about</h2>
+    <h2>Whenever you learn something new about the topic, make entries summarizing what you have learned</h2>
+{% endblock content %}
